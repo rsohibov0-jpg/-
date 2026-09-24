@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="ИМПЕРЦЫ — элитный военный альянс. Кодекс, промокоды, гайд для новичков и администрация.">
+<title>👑 ИМПЕРЦЫ — Элитный военный альянс</title>
+<style>
+:root{
+  --gold:#f6c453; --gold2:#fff0a8; --dark:#050505; --panel:rgba(8,8,10,.82);
+  --line:rgba(246,196,83,.35); --text:#f7f3e8; --muted:#c8c1b0; --red:#9e1d1d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--text); font-family:Georgia,"Times New Roman",serif;
+  background:#030303 url("background.jpg") center top/cover fixed no-repeat;
+  min-height:100vh;
+}
+body:before{
+  content:""; position:fixed; inset:0; z-index:-1;
+  background:linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,0,0,.78) 45%,rgba(0,0,0,.93));
+}
+body:after{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background-image:radial-gradient(circle at 20% 20%,rgba(255,214,112,.12) 0 1px,transparent 2px),
+                   radial-gradient(circle at 80% 35%,rgba(255,214,112,.10) 0 1px,transparent 2px);
+  background-size:180px 180px,230px 230px;
+}
+a{color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{
+  min-height:94vh; display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:70px 0 50px; position:relative;
+}
+.hero{
+  max-width:1000px; padding:42px 24px; border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(0,0,0,.72),rgba(18,13,5,.63));
+  border-radius:28px; box-shadow:0 30px 80px #000, inset 0 0 50px rgba(246,196,83,.06);
+  backdrop-filter:blur(5px);
+}
+.emblem{
+  width:170px;height:170px;object-fit:cover;object-position:center 38%;
+  border-radius:50%; border:2px solid var(--gold);
+  box-shadow:0 0 0 7px rgba(246,196,83,.08),0 0 45px rgba(246,196,83,.35);
+  margin-bottom:18px;
+}
+.kicker{letter-spacing:5px;color:var(--gold);font-weight:bold;font-size:14px;text-transform:uppercase}
+h1{
+  margin:8px 0 10px; font-size:clamp(48px,10vw,105px); line-height:.9;
+  color:#ffe59a; letter-spacing:2px;
+  text-shadow:1px 1px 0 #6d4700,2px 2px 0 #4b2f00,4px 4px 0 #271900,
+              0 0 18px rgba(246,196,83,.55),0 12px 30px #000;
+}
+.subtitle{
+  font-size:clamp(18px,3vw,30px); font-weight:bold; margin:15px 0;
+  text-shadow:2px 3px 0 #000,0 0 12px rgba(255,255,255,.12);
+}
+.tagline{color:#ddd4c1; font-size:17px; line-height:1.65; max-width:780px;margin:0 auto 28px}
+.cta{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:12px;
+  background:linear-gradient(#ffe18a,#bd7914); color:#171006;text-decoration:none;font-weight:900;
+  box-shadow:0 7px 0 #5b3504,0 15px 35px #000; transition:.2s;
+}
+.cta:hover{transform:translateY(-3px);filter:brightness(1.08)}
+nav{
+  position:sticky;top:0;z-index:20; background:rgba(3,3,4,.92); border-bottom:1px solid var(--line);
+  backdrop-filter:blur(12px);
+}
+.nav-inner{display:flex;gap:8px;overflow:auto;padding:10px 0}
+.tab{
+  flex:0 0 auto;border:1px solid rgba(246,196,83,.25);background:rgba(255,255,255,.04);
+  color:#e9dfc9;border-radius:10px;padding:11px 15px;cursor:pointer;font:700 14px Georgia;
+}
+.tab:hover,.tab.active{background:linear-gradient(135deg,rgba(246,196,83,.22),rgba(158,29,29,.2));color:#ffe18a;border-color:var(--gold)}
+main{padding:34px 0 80px}
+.panel{display:none;animation:fade .35s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.section-title{font-size:clamp(28px,5vw,48px);color:#ffe18a;margin:12px 0 25px;text-shadow:3px 3px 0 #261700,0 0 18px rgba(246,196,83,.28)}
+.section-title small{display:block;font-size:13px;letter-spacing:4px;color:#bfb39c;margin-bottom:7px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+  background:linear-gradient(145deg,rgba(7,7,8,.88),rgba(28,20,9,.75)); border:1px solid var(--line);
+  border-radius:18px;padding:22px;box-shadow:0 15px 35px rgba(0,0,0,.45),inset 0 0 30px rgba(246,196,83,.025)
+}
+.card h3{margin:0 0 10px;color:#ffe08b;font-size:21px;text-shadow:2px 2px 0 #241600}
+.card p,.card li{color:#ddd6c7;line-height:1.65}
+.quote{
+  margin:18px 0;padding:22px 25px;border-left:4px solid var(--gold);
+  background:rgba(0,0,0,.56);font-size:21px;font-weight:bold;color:#fff1bd;
+  box-shadow:inset 20px 0 40px rgba(246,196,83,.03)
+}
+ul{padding-left:22px}.gold{color:#ffd96f}.danger{color:#ffb06b}
+.codes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.code{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px;
+  border:1px solid rgba(246,196,83,.25);background:rgba(0,0,0,.6);border-radius:12px
+}
+.code b{letter-spacing:1px;color:#ffe39b;font-family:Consolas,monospace;font-size:14px}
+.copy{
+  border:1px solid var(--gold);background:rgba(246,196,83,.12);color:#ffe39b;border-radius:8px;
+  padding:7px 10px;cursor:pointer;font-weight:bold
+}
+.copy:hover{background:rgba(246,196,83,.25)}
+.notice{padding:15px 18px;border-radius:12px;background:rgba(158,29,29,.17);border:1px solid rgba(255,100,60,.25);color:#f0d9c3;margin:15px 0}
+.steps{counter-reset:step}
+.steps .card{position:relative;padding-left:64px}
+.steps .card:before{
+  counter-increment:step;content:counter(step);position:absolute;left:18px;top:20px;width:32px;height:32px;
+  display:grid;place-items:center;border-radius:50%;background:#a76a0d;color:#fff;font-weight:900;
+  box-shadow:0 0 15px rgba(246,196,83,.3)
+}
+.admin{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.admin .card{text-align:center;padding:24px 10px}
+.crown{font-size:32px;filter:drop-shadow(0 5px 5px #000)}
+.admin-name{font-size:18px;color:#ffe49a;font-weight:bold;text-shadow:2px 2px 0 #241500}
+footer{padding:30px 0 50px;text-align:center;color:#a79d8a;border-top:1px solid rgba(246,196,83,.2)}
+.small{font-size:13px;color:#a79d8a}
+@media(max-width:850px){
+  .grid,.codes{grid-template-columns:1fr 1fr}.admin{grid-template-columns:1fr 1fr}
+  header{min-height:auto;padding-top:45px}
+}
+@media(max-width:560px){
+  .grid,.codes,.admin{grid-template-columns:1fr}
+  .hero{padding:30px 15px}.emblem{width:135px;height:135px}
+  .nav-inner{padding-left:4%;padding-right:4%}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero">
+    <img class="emblem" src="emblem.jpg" alt="Эмблема альянса ИМПЕРЦЫ">
+    <div class="kicker">👑 Элитный военный альянс 👑</div>
+    <h1>ИМПЕРЦЫ</h1>
+    <div class="subtitle">⚔️ МЫ НЕ ИЩЕМ ВОЙНУ. МЫ ЗАКАНЧИВАЕМ ИХ ПОБЕДОЙ.</div>
+    <p class="tagline">🔥 Здесь нет случайных игроков. Здесь — команда, которая знает свою цель и идёт к ней до конца.<br>💀 Наш принцип — сила в единстве.</p>
+    <a class="cta" href="https://t.me/+h-Ojp9VEv1Y5NWJi" target="_blank" rel="noopener">🔥 ВОЙТИ В ШТАБ TELEGRAM →</a>
+  </div>
+</header>
+
+<nav>
+  <div class="container nav-inner">
+    <button class="tab active" data-tab="alliance">👑 Альянс</button>
+    <button class="tab" data-tab="codes">🎁 Промокоды</button>
+    <button class="tab" data-tab="tutorial">📜 Туториал</button>
+    <button class="tab" data-tab="administration">⚜️ Администрация</button>
+    <button class="tab" data-tab="media">🖼️ Медиа</button>
+  </div>
+</nav>
+
+<main class="container">
+<section id="alliance" class="panel active">
+  <div class="section-title"><small>01 / ИМПЕРИЯ</small>КОДЕКС ИМПЕРЦЕВ</div>
+  <div class="quote">👑 ИМПЕРЦЫ | ЭЛИТНЫЙ ВОЕННЫЙ АЛЬЯНС 👑</div>
+  <div class="grid">
+    <div class="card"><h3>🌐 ОНЛАЙН 24/7</h3><p>Всегда кто-то в строю. Мы держим связь и не оставляем союзника одного.</p></div>
+    <div class="card"><h3>🤝 СВОИХ НЕ БРОСАЕМ</h3><p>Прикрываем своих, помогаем ресурсами и действуем как единая команда.</p></div>
+    <div class="card"><h3>⚔️ ЕДИНЫЙ ФРОНТ</h3><p>Выходим на поле боя вместе и координируем действия ради общей цели.</p></div>
+    <div class="card"><h3>🚀 РАЗВИТИЕ</h3><p>Постоянно усиливаем позиции, развиваем игроков и инфраструктуру альянса.</p></div>
+    <div class="card"><h3>🏆 РЕЙТИНГ И СЛАВА</h3><p>Боремся за рейтинг, территорию, победы и славу альянса.</p></div>
+    <div class="card"><h3>📜 КОДЕКС</h3><ul><li>Активность — обязательна.</li><li>Команда — превыше личных амбиций.</li><li>Своих не бросаем.</li><li>Помощь союзнику — долг.</li><li>В бою действуем сообща.</li><li>Цель — только вперёд.</li></ul></div>
+  </div>
+  <div class="quote">🔥 НАШ ЧАТ — ШТАБ.<br>⚔️ НАШИ ИГРОКИ — БОЕВАЯ ЕДИНИЦА.<br>👑 НАШ АЛЬЯНС — ИМПЕРИЯ.</div>
+  <div class="card">
+    <h3>💥 ПРИСОЕДИНЯЙСЯ К ИМПЕРЦАМ</h3>
+    <p>Враги могут объединяться. Мы просто становимся сильнее.</p>
+    <p class="gold"><b>🏆 ВМЕСТЕ — В БОЙ. ВМЕСТЕ — К ПОБЕДЕ.</b></p>
+    <p><b>👑 ИМПЕРЦЫ НЕ ОТСТУПАЮТ. ИМПЕРЦЫ ЗАБИРАЮТ ПОБЕДУ.</b></p>
+  </div>
+</section>
+
+<section id="codes" class="panel">
+  <div class="section-title"><small>02 / НАГРАДЫ</small>ПРОМОКОДЫ</div>
+  <p class="tagline" style="text-align:left">Нажми «Копировать», затем введи код в игре. Если код перестал работать, это может быть связано со сроком действия или лимитом активаций.</p>
+  <div class="codes" id="codesList"></div>
+</section>
+
+<section id="tutorial" class="panel">
+  <div class="section-title"><small>03 / ПУТЬ НОВИЧКА</small>ТУТОРИАЛ</div>
+
+  <div class="card">
+    <h3>‼️ ИДЕАЛЬНЫЙ UR ОТРЯД ВОИНОВ</h3>
+    <div class="grid">
+      <div><h3>🛡️ ТАНКИ</h3><p><b>АРТУР</b> — основной танк. Пассивный навык «Сильная воля» снижает получаемый урон для союзных танков.</p><p><b>ДАСКАЛ</b> — дополняет Артура защитой. Ультимейт даёт команде щиты в размере 25% от максимального HP.</p></div>
+      <div><h3>⚔️ АТАКУЮЩИЕ</h3><p><b>МАРЛЕНА</b> — ключевой кэрри. Ультимейт наносит высокий урон по случайным целям, пассивка усиливает атаки.</p><p><b>ЗОЯ</b> — специализируется на критических ударах и усиливает урон на поздних стадиях.</p></div>
+      <div><h3>✨ ПОДДЕРЖКА</h3><p><b>ХАРПЕР</b> — увеличивает атаку союзников, даёт бонус +16.5% к атаке героям-воинам и поддерживает самое слабое звено через «Живительный пузырь».</p></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>🔁 АЛЬТЕРНАТИВЫ</h3>
+    <div class="grid">
+      <div><h3>🛡️ ТАНКИ</h3><p><b>БЕЛЛА</b> — замена Даскалу, ориентирована на выживаемость и снижение входящего урона.</p><p><b>ЛЮЦИУС</b> — замена Артуру, специализируется на оглушении и прорыве обороны, полезен в PvP и PvE.</p></div>
+      <div><h3>⚔️ АТАКУЮЩИЕ</h3><p><b>КЛЭР</b> — основной физический урон по площади.</p><p><b>СИВИР</b> — кандидат для PvP со стабильными бонусами к атаке и ударами по нескольким целям.</p></div>
+      <div><h3>✨ ПОДДЕРЖКА</h3><p><b>СЕЛИЯ</b> — SSR-поддержка воинов, специализируется на сборе ресурсов и слабее UR-аналогов в бою.</p></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>🏆 БОНУС ОТРЯДА</h3>
+    <ul>
+      <li>3 героя — <span class="gold">+5%</span></li>
+      <li>3 + 2 — <span class="gold">+10%</span></li>
+      <li>4 героя — <span class="gold">+15%</span></li>
+      <li>5 героев — <span class="gold">+20% к атаке, защите и здоровью</span></li>
+    </ul>
+    <div class="notice">Не ставьте слабых героев только ради бонуса. +20% имеет смысл, если все 5 героев хорошо прокачаны.</div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>‼️ СНАРЯЖЕНИЕ И УЛУЧШЕНИЯ</h3>
+    <p><b>Золотое правило:</b> не распределяйте материалы равномерно. Приоритет зависит от роли героя.</p>
+    <div class="grid">
+      <div><h3>⚔️ Атакующие</h3><p>Марлена, Клэр и т.д. — меч и перчатки, ориентир до 40 уровня.</p></div>
+      <div><h3>🛡️ Танки</h3><p>Артур, Даскал, Белла — броня и сапоги, ориентир до 40 уровня.</p></div>
+      <div><h3>✨ Поддержка</h3><p>Харпер, Селия — баланс. Не требуют максимальных вложений, ресурсы лучше сохранить для ключевых ролей.</p></div>
+    </div>
+    <p class="gold"><b>❗ МАСТЕРСКУЮ СНАРЯЖЕНИЯ ПОДНИМАЕМ ДО 20 УРОВНЯ.</b></p>
+  </div>
+
+  <div class="section-title" style="margin-top:45px"><small>04 / РАЗВИТИЕ</small>ТЕРРИТОРИЯ И РЕСУРСЫ</div>
+  <div class="steps grid">
+    <div class="card"><h3>Святилище</h3><p>Главный двигатель развития.</p></div>
+    <div class="card"><h3>Необходимые здания</h3><p>Стройте здания, требуемые для следующего уровня Святилища.</p></div>
+    <div class="card"><h3>Полигоны</h3><p>Ключевой военный приоритет.</p></div>
+    <div class="card"><h3>Лаборатория</h3><p>Особенно важна ветка Дуэли альянсов.</p></div>
+    <div class="card"><h3>Казармы</h3><p>Поддерживайте развитие войск.</p></div>
+    <div class="card"><h3>Мастерская</h3><p>До 20 уровня обязательно для повышения звёзд снаряжения.</p></div>
+    <div class="card"><h3>Лазареты</h3><p>Не оставляйте на низком уровне: они определяют запас тяжелораненых после боёв.</p></div>
+    <div class="card"><h3>Статуи фракций</h3><p>Высокий приоритет для основной фракции.</p></div>
+    <div class="card"><h3>Зал альянса</h3><p>Увеличивает количество и эффективность помощи союзников.</p></div>
+    <div class="card"><h3>Ворон</h3><p>Средне-высокий приоритет.</p></div>
+    <div class="card"><h3>Хижина строителя</h3><p>Развивайте по мере необходимости.</p></div>
+    <div class="card"><h3>Ресурсные здания</h3><p>Фермы, лесопилки, цветники и склады — по текущим затратам.</p></div>
+    <div class="card"><h3>Производственные мастерские</h3><p>Плавильные и ткацкие мастерские. 20 уровень даёт полезное производство.</p></div>
+    <div class="card"><h3>Склады ресурсов</h3><p>Поддерживайте по потребностям.</p></div>
+    <div class="card"><h3>Стена</h3><p>По требованиям Святилища.</p></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>📅 ДУЭЛЬ АЛЬЯНСОВ И БИТВА НА ВЫЖИВАНИЕ</h3>
+    <ol>
+      <li>Качайте ветку Дуэли альянсов в исследовательской лаборатории.</li>
+      <li><b>Задания Сокола</b> копите во вторник, четверг и воскресенье.</li>
+      <li>Тайные приказы, торговые соглашения, ускорители, сундуки ворона, билеты призыва и фрагменты героев — копите и тратьте по дням.</li>
+      <li>Сначала смотрите календарь событий, потом нажимайте кнопку улучшения.</li>
+      <li>Улучшения героев, войск и трата ускорений выполняйте в окна, когда это приносит очки событиям.</li>
+    </ol>
+    <div class="notice">⚠️ Потратить ресурсы можно позже, а потерянные очки события уже не вернуть. Работайте синхронно с альянсом.</div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>‼️ VIP СТАТУС</h3>
+    <p>VIP можно поднять с помощью алмазов, а не только доната.</p>
+    <ul>
+      <li>Ускорение строительства и исследований.</li>
+      <li>Ежедневные подарки и ресурсы.</li>
+      <li>Доступ к закрытым VIP-магазинам и особым наградам.</li>
+    </ul>
+  </div>
+
+  <div class="quote">‼️ ВАЖНО: СПЕРЕДИ — 2 ТАНКА. СЗАДИ — АТАКУЮЩИЕ И 1 ПОДДЕРЖКА.</div>
+</section>
+
+<section id="administration" class="panel">
+  <div class="section-title"><small>04 / ШТАБ</small>АДМИНИСТРАЦИЯ</div>
+  <p class="tagline" style="text-align:left">👑 Люди, которые держат штаб, координацию и развитие альянса.</p>
+  <div class="admin">
+    <div class="card"><div class="crown">👑</div><div class="admin-name">русскийараб</div><p class="small">Штаб альянса</p></div>
+    <div class="card"><div class="crown">⚜️</div><div class="admin-name">MonaSHKA</div><p class="small">Администрация</p></div>
+    <div class="card"><div class="crown">🛡️</div><div class="admin-name">Сандра38</div><p class="small">Администрация</p></div>
+    <div class="card"><div class="crown">⚔️</div><div class="admin-name">MaxKil3</div><p class="small">Администрация</p></div>
+    <div class="card"><div class="crown">✝️</div><div class="admin-name">Святойотец</div><p class="small">Администрация</p></div>
+  </div>
+  <div class="quote" style="margin-top:20px">🤝 Единый штаб. Единая команда. Единая цель.</div>
+</section>
+
+<section id="media" class="panel">
+  <div class="section-title"><small>05 / ГАЛЕРЕЯ</small>МЕДИА АЛЬЯНСА</div>
+  <div class="card">
+    <h3>🖼️ Место для следующих изображений</h3>
+    <p>Эта вкладка уже подготовлена под третье и последующие фото. Когда добавишь изображения, их можно будет вынести в отдельные карточки или отдельные вкладки без переделки дизайна.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="font-size:24px;color:#ffe18a">👑 ИМПЕРЦЫ 👑</div>
+    <p>Элитный военный альянс • Сила в единстве</p>
+    <a class="cta" href="https://t.me/+h-Ojp9VEv1Y5NWJi" target="_blank" rel="noopener">⚔️ TELEGRAM ШТАБ</a>
+    <p class="small">Сайт альянса • ИМПЕРЦЫ</p>
+  </div>
+</footer>
+
+<script>
+const promoCodes = [
+  "LA1OW9F7X","LADCEX1223","LAPJAP777","LAPKOR777","LAAS777","LA15WPN4D",
+  "61HW4LA","LA20WBZ9","LAKR10K6L","twlap666","LAKR12K7O","LA25W8CM",
+  "twlap888","LA30W7F2M","LAOKT26","WLTLAP","LAKR15K9A","LACAFE26"
+];
+
+const codesList = document.getElementById("codesList");
+promoCodes.forEach(code=>{
+  const item=document.createElement("div");
+  item.className="code";
+  item.innerHTML=`<b>${code}</b><button class="copy" data-code="${code}">Копировать</button>`;
+  codesList.appendChild(item);
+});
+
+document.querySelectorAll(".tab").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.tab).classList.add("active");
+    window.scrollTo({top:document.querySelector("nav").offsetTop,behavior:"smooth"});
+  });
+});
+
+document.addEventListener("click", async e=>{
+  if(!e.target.classList.contains("copy")) return;
+  const code=e.target.dataset.code;
+  try{
+    await navigator.clipboard.writeText(code);
+    e.target.textContent="Скопировано ✓";
+  }catch{
+    e.target.textContent="Скопируй вручную";
+  }
+  setTimeout(()=>e.target.textContent="Копировать",1600);
+});
+</script>
+</body>
+</html>
